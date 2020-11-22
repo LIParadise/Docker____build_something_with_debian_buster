@@ -19,7 +19,7 @@ RUN apt -y install dialog apt-utils aptitude
 RUN aptitude update
 RUN aptitude -y safe-upgrade
 RUN \
-aptitude -y install gcc g++ gdb clang valgrind vim tmux zsh htop pigz make cmake git wget curl ctags awk autoconf automake autotools-dev gawk build-essential bison flex bc zlib1g-dev sudo libreadline-dev cvc4 libcvc4-dev nodejs npm nftables &&\
+aptitude -y install gcc g++ gdb clang valgrind vim tmux zsh htop pigz make cmake git wget curl ctags awk autoconf automake autotools-dev gawk build-essential bison flex bc zlib1g-dev sudo libreadline-dev cvc4 libcvc4-dev nodejs npm nftables neofetch &&\
 echo "flush ruleset" > /etc/nftables.conf                                               &&\
 echo "table inet filter {" >> /etc/nftables.conf                                        &&\
 echo "    chain input {" >> /etc/nftables.conf                                          &&\
@@ -57,10 +57,11 @@ git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions .oh-my-zsh/
 git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git .oh-my-zsh/custom/plugins/zsh-syntax-highlighting &&\
 git clone --depth=1 https://github.com/LIParadise/home_dir.git .home &&\
 mkdir -p .vim/.swp .vim/.undo .vim/.backup .zsh &&\
-cp .home/COC.vimrc .vimrc &&\
+cp .home/.config/nvim/init.vim .vimrc &&\
 cp .home/.zshrc .zsh &&\
 cp .home/.tmux.conf . &&\
 ln -s ~/.zsh/.zshrc ~/.zshrc &&\
+echo "alias nv=\"vim\"" >> ~/.zsh/.zshrc &&\
 ln -s /mnt/user_data/Chun_Hong/ABC_async_DAC17 DAC17 &&\
 cp -r .home/.vim . &&\
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim &&\
