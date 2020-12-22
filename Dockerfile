@@ -62,7 +62,8 @@ cp .home/.zshrc .zsh &&\
 cp .home/.tmux.conf . &&\
 ln -s ~/.zsh/.zshrc ~/.zshrc &&\
 echo "alias nv=\"vim\"" >> ~/.zsh/.zshrc &&\
-ln -s /mnt/user_data/Chun_Hong/ABC_async_DAC17 DAC17 &&\
+ln -s /mnt/user_data/Chun_Hong/ABC_async_DAC17   DAC17   &&\
+ln -s /mnt/user_data/Chun_Hong/ABC_async_ASYNC17 ASYNC17 &&\
 cp -r .home/.vim . &&\
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim &&\
 sed -i -r 's/(.*)virtualenvwrapper.*/\#\ \1virtualenvwrapper\.sh/' .zsh/.zshrc &&\
